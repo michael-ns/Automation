@@ -1,7 +1,9 @@
 Auto::Application.routes.draw do
   get "users/new"
+
   root  to: 'static_pages#home'
-  match '/help',  to: 'static_pages#help',  via: 'get'
+  match '/help',    to: 'static_pages#help',  via: 'get'
+  match '/signup',  to: 'users#new',          via: 'get'
   resources :users, :microposts
 
   # The priority is based upon order of creation: first created -> highest priority.
