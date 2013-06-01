@@ -1,4 +1,7 @@
 Auto::Application.routes.draw do
+  get "user_interface/index"
+  get "user_interface/create"
+  get "user_interface/edit"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
