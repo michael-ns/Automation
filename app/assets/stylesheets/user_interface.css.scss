@@ -1,3 +1,8 @@
-// Place all the styles related to the UserInterface controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.row-fluid {
+	padding-top: 30px;
+
+	.span4{
+		background-color: #F7F7F7;
+		border-radius: 15px;
+	}
+}

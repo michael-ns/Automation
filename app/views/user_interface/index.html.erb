@@ -1,2 +1,17 @@
-<h1>UserInterface#index</h1>
-<p>Find me in app/views/user_interface/index.html.erb</p>
+<div class="row-fluid">
+	<div class="span4">
+		<h2 class="text-center">Features</h2>
+		<i class="icon-plus"></i>
+		<ul id="features-list">
+			<% @features.each do |f| %>
+			<li><%= f.name %></li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="span4">
+		<h2 class="text-center">Test Suites</h2>
+	</div>
+	<div class="span4">
+		<h2 class="text-center">Test Cases</h2>
+	</div> 
+</div>  
