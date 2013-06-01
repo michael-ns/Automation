@@ -1,0 +1,2 @@
+class TestSuiteController < ApplicationController
+end
