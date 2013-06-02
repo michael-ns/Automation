@@ -1,6 +1,7 @@
 class UserInterfaceController < ApplicationController
   def index
   	getFeatures
+  	getNewFeature
   end
 
   def create
@@ -11,5 +12,9 @@ class UserInterfaceController < ApplicationController
 
   def getFeatures
   	@features = Feature.all
+  end
+
+  def getNewFeature
+  	@feature = Feature.new
   end
 end

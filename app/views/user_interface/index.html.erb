@@ -7,17 +7,7 @@
 			<li><%= f.name %></li>
 			<% end %>
 		</ul>
-
-
-
-<%= form_for @feature, :url => {:controller => 'feature', :action => 'create' } do |f| %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-<% end %>
-
-
+		<%= render 'user_interface/createFeatureForm' %>
 	</div>
 	<div class="span4">
 		<h2 class="text-center">Test Suites</h2>

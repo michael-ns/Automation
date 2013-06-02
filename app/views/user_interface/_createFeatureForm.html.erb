@@ -1,0 +1,5 @@
+<%= form_for @feature, :remote => true, :url => {:controller => 'feature', :action => 'create' } do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.submit "Add Feature", class: "btn btn-small btn-primary" %>
+<% end %>
