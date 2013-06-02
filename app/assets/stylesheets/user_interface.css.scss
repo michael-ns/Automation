@@ -8,13 +8,16 @@
 }
 
 .new_feature {
-	margin-left: 15px;
-	margin-right: 15px;
+	margin: 15px;
 	padding: 10px;
 	background-color: #bfbdbd;
 	border-radius: 15px;
 }
 
-#features-list {
-	padding-left: 25px;
+.list {
+	margin-left: 25px;
+}
+
+.name:hover {
+	background: #bfbdbd;
 }

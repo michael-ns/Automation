@@ -1,12 +1,7 @@
 <div class="row-fluid">
 	<div class="span4">
 		<h2 class="text-center">Features</h2>
-		<i class="icon-plus"></i>
-		<ul id="features-list">
-			<% @features.each do |f| %>
-			<li><%= f.name %></li>
-			<% end %>
-		</ul>
+		<%= render 'user_interface/listFeature' %>
 		<%= render 'user_interface/createFeatureForm' %>
 	</div>
 	<div class="span4">
