@@ -13,7 +13,21 @@ class FeatureController < ApplicationController
 	    end
 	end
 
-	def feature_params
-      params.require(:feature).permit(:name)
-    end
+	def destroy
+		@feature = Feature.find(params[:id])
+		@feature.destroy
+		respond_to do |format|
+			format.html { redirect_to root_path }
+			format.json { head :no_content }
+		end
+	end
+
+	private
+	    def set_feature
+	      @feature = Feature.find(params[:id])
+	    end
+
+		def feature_params
+	      params.require(:feature).permit(:name)
+	    end
 end
