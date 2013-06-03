@@ -4,8 +4,8 @@
 			<%= f.name %>
 		</div>
 		<div class="span3">
-			<i class="icon-edit"></i>
-			<%= link_to 'Delete', f, method: :delete, data: { confirm: 'Are you sure?' } %>
+			<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_feature_path(f) %>
+			<%= link_to '<i class="icon-remove"></i>'.html_safe, f, method: :delete, data: { confirm: 'Are you sure?' } %>
 		</div>
 	</div>
 <% end %>

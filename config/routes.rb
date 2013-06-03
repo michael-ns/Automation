@@ -1,9 +1,8 @@
 Auto::Application.routes.draw do
-  resources :feature, :test_suite
-  root to: 'user_interface#index'
+  resources :feature
+  root 'user_interface#index'
   match '/create',    to: 'user_interface#create',    via: 'get'
   match '/edit',    to: 'user_interface#edit',    via: 'get'
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.

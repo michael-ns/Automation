@@ -22,6 +22,23 @@ class FeatureController < ApplicationController
 		end
 	end
 
+	def update
+		set_feature
+	    respond_to do |format|
+	      if @feature.update(feature_params)
+	        format.html { redirect_to root_path, notice: 'Feature was successfully updated.' }
+	        format.json { head :no_content }
+	      else
+	        format.html { render action: 'edit' }
+	        format.json { render json: @feature.errors, status: :unprocessable_entity }
+	      end
+	    end
+	  end
+
+	def edit
+		set_feature
+  	end
+
 	private
 	    def set_feature
 	      @feature = Feature.find(params[:id])
