@@ -3,7 +3,7 @@ Auto::Application.routes.draw do
   root 'user_interface#index'
   match '/create',    to: 'user_interface#create',    via: 'get'
   match '/edit',    to: 'user_interface#edit',    via: 'get'
-
+  match '/feature_sayHello', to:'feature#sayHello', via:'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

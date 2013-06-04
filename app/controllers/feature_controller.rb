@@ -39,6 +39,10 @@ class FeatureController < ApplicationController
 		set_feature
   	end
 
+	def sayHello
+		render :json => "hello"
+	end
+
 	private
 	    def set_feature
 	      @feature = Feature.find(params[:id])
