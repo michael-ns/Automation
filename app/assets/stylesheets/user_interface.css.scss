@@ -15,6 +15,27 @@
 	display: none;
 }
 
+.new_test_suite {
+	margin: 15px;
+	padding: 10px;
+	background-color: #bfbdbd;
+	border-radius: 15px;
+	display: none;
+}
+
 .list {
 	margin-left: 25px;
+}
+
+.name {
+	border-radius: 15px;
+	padding-left: 10px;
+}
+
+#btn-add-feature {
+	cursor: pointer;
+}
+
+#btn-add-suite {
+	cursor: pointer;
 }
