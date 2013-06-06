@@ -1,0 +1,5 @@
+<%= form_for @testSuite, :remote => false, :url => {:controller => 'test_suite', :action => 'create' } do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.submit "Add Test Suite", class: "btn btn-small btn-primary" %>
+<% end %>
