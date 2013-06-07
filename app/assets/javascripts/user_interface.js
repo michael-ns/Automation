@@ -1,14 +1,15 @@
 $(document).ready(function(){
 	var selectedFeatureId = 'empty';
 
+	//add feature
 	$('#btn-add-feature').click(function () {
 		$('.new_feature').show("slow");
 	});
 
+	//handle feature click effect and load related test suites
 	$('.feature').find('.list').find('.name').click(function () {
 		for (var i=0;i<$('.feature').find('.list').find('.name').length;i++)
 		{ 
-			//reset the color
 			$('.feature').find('.list').find('.name').eq(i).css("background-color","transparent");
 		}
 		$(this).css("background-color","#bfbdbd");
@@ -35,7 +36,7 @@ $(document).ready(function(){
 		});
 	});
 
-	//test suites
+	//add test suite
 	$('#btn-add-suite').click(function () {
 		if (selectedFeatureId != 'empty') {
 			$('.new_test_suite').show("slow");
@@ -45,4 +46,6 @@ $(document).ready(function(){
 			alert('Please select a feature first');
 		}
 	});
+
+	//handle test suite click effect and load related test cases
 });
