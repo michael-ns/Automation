@@ -1,10 +1,12 @@
 Auto::Application.routes.draw do
   resources :feature
   resources :test_suite
+  resources :test_case
   root 'user_interface#index'
   match '/create',    to: 'user_interface#create',    via: 'get'
   match '/edit',    to: 'user_interface#edit',    via: 'get'
   match '/load-test-suite', to:'test_suite#load', via:'get'
+  match '/load-test-case', to:'test_case#load', via:'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
