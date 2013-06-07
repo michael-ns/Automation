@@ -35,7 +35,7 @@ $(document).ready(function(){
 	$('#btn-add-suite').click(function () {
 		if (selectedFeatureId != 'empty') {
 			$('.new_test_suite').show("slow");
-			$('#test_suite_name').after('<input id="test_suite_feature_id" name="test_suite[feature_id]" type="hidden" value="' + selectedFeatureId + '">');
+			$('#test_suite_name').after('<input id="test_suite_feature_id" name="feature_id" type="hidden" value="' + selectedFeatureId + '">');
 		}
 		else {
 			alert('Please select a feature first');

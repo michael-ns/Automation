@@ -7,6 +7,7 @@ class TestSuiteController < ApplicationController
 
 	def create
 		@suite = TestSuite.new(suite_params)
+		@suite.feature_id = params[:feature_id]
 
 		respond_to do |format|
 	      if @suite.save
