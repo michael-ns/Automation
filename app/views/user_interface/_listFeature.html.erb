@@ -3,8 +3,10 @@
 		<div class="span9 name" id= <%= f.id %> >
 			<%= f.name %>
 		</div>
-		<div class="span3">
+		<div class="span1">
 			<%= link_to '<i class="icon-edit"></i>'.html_safe, edit_feature_path(f) %>
+		</div>
+		<div class="span1">
 			<%= link_to '<i class="icon-remove"></i>'.html_safe, f, method: :delete, data: { confirm: 'Are you sure?' } %>
 		</div>
 	</div>

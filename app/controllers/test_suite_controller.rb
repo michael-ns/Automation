@@ -20,6 +20,32 @@ class TestSuiteController < ApplicationController
 	    end
 	end
 
+	def update
+		set_suite
+		respond_to do |format|
+			if @suite.update(suite_params)
+				format.html { redirect_to root_path, notice: 'Feature was successfully updated.' }
+				format.json { head :no_content }
+			else
+				format.html { render action: 'edit' }
+				format.json { render json: @suite.errors, status: :unprocessable_entity }
+			end
+		end
+	end		
+
+	def destroy
+		@suite = TestSuite.find(params[:id])
+		@suite.destroy
+		respond_to do |format|
+			format.html { redirect_to root_path }
+			format.json { head :no_content }
+		end
+	end
+
+	def edit
+		set_suite
+	end
+
 	private
 	    def set_suite
 	      @suite = TestSuite.find(params[:id])

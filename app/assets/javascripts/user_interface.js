@@ -23,7 +23,11 @@ $(document).ready(function(){
 				var suites = [];
 
 				for( var i=0; i<data.length; i++ ){
-					suites.push('<div class="row list"><div class="span9 name" id="' + data[i].id + '">' + data[i].name + '</div><div class="span3"><i class="icon-edit"></i><i class="icon-remove"></i></div></div>');
+					var suite = '';
+					suite += '<div class="row list"><div class="span9 name" id="' + data[i].id + '">' + data[i].name + '</div>';
+					suite += '<div class="span1"><a href="/test_suite/' + data[i].id + '/edit"><i class="icon-edit"></i></a></div>';
+					suite += '<div class="span1"><a data-confirm="Are you sure?" data-method="delete" href="/test_suite/' + data[i].id + '"><i class="icon-remove"></i></a></div></div>';
+					suites.push(suite);
 				}
 
 				$('.test-suite').find('.list-placeholder').html(suites);
