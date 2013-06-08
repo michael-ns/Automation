@@ -60,7 +60,7 @@ $(document).ready(function(){
 
 					for( var i=0; i<data.length; i++ ){
 						var thisCase = '';
-						thisCase += '<div class="row list"><div class="span9 name" id="' + data[i].id + '">' + data[i].name + '</div>';
+						thisCase += '<div class="row list"><div class="span9 case-name" id="' + data[i].id + '">' + data[i].name + '</div>';
 						thisCase += '<div class="span1"><a href="/test_case/' + data[i].id + '/edit"><i class="icon-edit"></i></a></div>';
 						thisCase += '<div class="span1"><a data-confirm="Are you sure?" data-method="delete" href="/test_case/' + data[i].id + '"><i class="icon-remove"></i></a></div></div>';
 						cases.push(thisCase);
@@ -80,6 +80,16 @@ $(document).ready(function(){
 		}
 		else {
 			alert('Please select a feature first');
+		}
+	});
+
+	//add test case
+	$('#btn-add-case').click(function () {
+		if (selectedSuiteId != 'empty') {
+			window.location.href = '/test_case/new?suite_id=' + selectedSuiteId;
+		}
+		else {
+			alert('Please select a test suite first');
 		}
 	});
 });
