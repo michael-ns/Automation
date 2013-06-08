@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130608041206) do
+ActiveRecord::Schema.define(version: 20130608055404) do
 
   create_table "addresses", force: true do |t|
     t.string   "billing_country"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20130608041206) do
 
   create_table "customers", force: true do |t|
     t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "envs", force: true do |t|
+    t.string   "domain"
+    t.string   "live_or_staging"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

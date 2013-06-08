@@ -61,8 +61,8 @@ $(document).ready(function(){
 					for( var i=0; i<data.length; i++ ){
 						var thisCase = '';
 						thisCase += '<div class="row list"><div class="span9 name" id="' + data[i].id + '">' + data[i].name + '</div>';
-						thisCase += '<div class="span1"><a href="/test_suite/' + data[i].id + '/edit"><i class="icon-edit"></i></a></div>';
-						thisCase += '<div class="span1"><a data-confirm="Are you sure?" data-method="delete" href="/test_suite/' + data[i].id + '"><i class="icon-remove"></i></a></div></div>';
+						thisCase += '<div class="span1"><a href="/test_case/' + data[i].id + '/edit"><i class="icon-edit"></i></a></div>';
+						thisCase += '<div class="span1"><a data-confirm="Are you sure?" data-method="delete" href="/test_case/' + data[i].id + '"><i class="icon-remove"></i></a></div></div>';
 						cases.push(thisCase);
 					}
 
