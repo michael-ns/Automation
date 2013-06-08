@@ -11,10 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130607043456) do
+ActiveRecord::Schema.define(version: 20130608041206) do
+
+  create_table "addresses", force: true do |t|
+    t.string   "billing_country"
+    t.string   "billing_address"
+    t.string   "billing_suburb"
+    t.boolean  "shipping_same_as_billing"
+    t.string   "shipping_country"
+    t.string   "shipping_address"
+    t.string   "shipping_suburb"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "customers", force: true do |t|
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "features", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "url"
+    t.integer  "quantity"
+    t.boolean  "gift_wrap"
+    t.boolean  "is_cpr"
+    t.string   "type"
+    t.string   "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "promos", force: true do |t|
+    t.string   "redeem_page"
+    t.boolean  "has_coupon"
+    t.string   "coupon_code"
+    t.string   "coupon_type"
+    t.string   "coupon_discount_type"
+    t.float    "coupon_discount_value"
+    t.boolean  "has_gift_card"
+    t.string   "gift_card_code"
+    t.float    "gift_card_amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,6 +67,10 @@ ActiveRecord::Schema.define(version: 20130607043456) do
     t.integer  "suite_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "customer_id"
+    t.integer  "promo_id"
+    t.integer  "address_id"
+    t.boolean  "mailcall"
   end
 
   create_table "test_suites", force: true do |t|
