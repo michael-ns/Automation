@@ -2,6 +2,8 @@ class TestCaseController < ApplicationController
 
 	def new
 		@testCase = TestCase.new
+		@parentSuite = TestSuite.find(params[:suite_id])
+		@parentFeature = Feature.find(@parentSuite.feature_id)
 	end
 
 	def load
