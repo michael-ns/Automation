@@ -92,4 +92,9 @@ $(document).ready(function(){
 			alert('Please select a test suite first');
 		}
 	});
+
+	//test case details page add item
+	$('#btn-add-item').click(function () {
+		$('#item-wrapper:last-child').after("item details goes here");
+	});
 });

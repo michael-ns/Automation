@@ -7,6 +7,11 @@
 	}
 }
 
+#item-wrapper {
+	border-radius: 15px;
+	background-color: #F7F7F7;
+}
+
 .new_feature {
 	margin: 15px;
 	padding: 10px;
@@ -45,4 +50,12 @@
 
 #btn-add-suite {
 	cursor: pointer;
+}
+
+#btn-add-case {
+	cursor: pointer;
+}
+
+.tab-content {
+	padding: 15px;
 }
