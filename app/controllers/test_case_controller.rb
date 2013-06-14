@@ -13,7 +13,9 @@ class TestCaseController < ApplicationController
 	end
 
 	def create
-		@testCase = TestCase.new(feature_params)
+		@testCase = TestCase.new(case_params)
+
+		@testCase.customer_id = Customer.find_id(params[:customer])
 
 		respond_to do |format|
 	      if @testCase.save
