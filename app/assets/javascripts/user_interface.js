@@ -93,8 +93,20 @@ $(document).ready(function(){
 		}
 	});
 
+	addNewItem = function () {
+		var counter = $('.item-wrapper').length + 1;
+		$('.item-wrapper').last().after('<div class="span5 item-wrapper" id="item-wrapper-' + counter + '"></div>');
+		$('.item-count').text(counter);
+
+		//handlebars add items
+		var source = $('#item-template').html();
+		var template = Handlebars.compile(source);
+		var data = {itemCount: counter};
+		$('#item-wrapper-' + counter).html(template(data));
+	}
+
 	//test case details page add item
 	$('#btn-add-item').click(function () {
-		$('#item-wrapper:last-child').after("item details goes here");
+		addNewItem();
 	});
 });

@@ -3,21 +3,21 @@
 		<button class="btn btn-medium btn-primary" id="btn-add-item" type="button"><i class="icon-plus"></i> Add an Item</button>
 	</div>
 	<div class="span3">
-		Item Count: 1
+		Item Count: <span class="item-count">1</span>
 	</div>
 </div>
 
 <div class="row-fluid">
-	<div class="span6" id="item-wrapper">
+	<div class="span5 item-wrapper" id="item-wrapper-1">
 		<div class="row-fluid">
 			<h2 class="text-center">Item 1</h2>
 			<div class="span5">Item URL</div>
 			<div class="span5">
-				<input type="text" class="input-medium" placeholder="Paste URL here">
+				<input type="text" class="input-medium" name="item-1-name" placeholder="Paste URL here">
 			</div>
 			<div class="span5">Item Quantity</div>
 			<div class="span5">
-				<select class="input-medium">
+				<select class="input-medium" name="item-1-quantity">
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -27,8 +27,9 @@
 			</div>
 			<div class="span5">Item Size</div>
 			<div class="span5">
-				<input type="text" class="input-medium" placeholder="Enter size here">
+				<input type="text" class="input-medium" name="item-1-size" placeholder="Enter size here">
 			</div>
 		</div>
 	</div>
+	<%= render 'test_case/item_detail'%>
 </div>
