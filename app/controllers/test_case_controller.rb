@@ -14,8 +14,9 @@ class TestCaseController < ApplicationController
 
 	def create
 		@testCase = TestCase.new(case_params)
-
 		@testCase.customer_id = Customer.find_id(params[:customer])
+		@testCase.payment_method = params[:payment]
+
 
 		respond_to do |format|
 	      if @testCase.save

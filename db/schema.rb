@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130608055404) do
+ActiveRecord::Schema.define(version: 20130614014136) do
 
   create_table "addresses", force: true do |t|
     t.string   "billing_country"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20130608055404) do
     t.integer  "promo_id"
     t.integer  "address_id"
     t.boolean  "mailcall"
+    t.string   "payment_method"
   end
 
   create_table "test_suites", force: true do |t|
