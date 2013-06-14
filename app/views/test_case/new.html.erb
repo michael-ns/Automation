@@ -1,54 +1,58 @@
-<div class="breadcrumbs"><%= @parentFeature.name %> > <%= @parentSuite.name %></div>
+<%= form_for @testCase, :remote => false, :url => {:controller => 'test_case', :action => 'create' } do |f| %>
+	<div class="breadcrumbs"><%= @parentFeature.name %> > <%= @parentSuite.name %></div>
+	<div class="row text-center">
+		<input type="text" class="input-medium" placeholder="Test Case Name" name="name">
+	</div>
+	<div class ="row text-right">
+		<%= f.submit "Save Test Case", class: "btn btn-small btn-primary" %>
+	</div>
+	<div class="tabbable">
+		<ul class="nav nav-tabs" id="myTab">
+			<li class="active"><a href="#customer" data-toggle="tab">Customer</a></li>
+			<li><a href="#payment" data-toggle="tab">Payment</a></li>
+			<li class="dropdown">
+				<a href="#" data-toggle="dropdown" class="dropdown-toggle">Address<b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="#billing" data-toggle="tab">Billing</a></li>
+					<li><a href="#shipping" data-toggle="tab">Shipping</a></li>
+				</ul>
+			</li>
+			<li><a href="#carrier" data-toggle="tab">Carrier</a></li>
+			<li><a href="#item" data-toggle="tab">Item</a></li>
+			<li class="dropdown">
+				<a href="#" data-toggle="dropdown" class="dropdown-toggle">Promotion<b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="#voucher" data-toggle="tab">voucher</a></li>
+					<li><a href="#gift-card" data-toggle="tab">Gift Card</a></li>
+				</ul>
+			</li>
+		</ul>
 
-<div class="row text-center">
-	<input type="text" class="input-medium" placeholder="Test Case Name">
-</div>
-<div class="tabbable">
-	<ul class="nav nav-tabs" id="myTab">
-		<li class="active"><a href="#customer" data-toggle="tab">Customer</a></li>
-		<li><a href="#payment" data-toggle="tab">Payment</a></li>
-		<li class="dropdown">
-			<a href="#" data-toggle="dropdown" class="dropdown-toggle">Address<b class="caret"></b></a>
-			<ul class="dropdown-menu">
-				<li><a href="#billing" data-toggle="tab">Billing</a></li>
-				<li><a href="#shipping" data-toggle="tab">Shipping</a></li>
-			</ul>
-		</li>
-		<li><a href="#carrier" data-toggle="tab">Carrier</a></li>
-		<li><a href="#item" data-toggle="tab">Item</a></li>
-		<li class="dropdown">
-			<a href="#" data-toggle="dropdown" class="dropdown-toggle">Promotion<b class="caret"></b></a>
-			<ul class="dropdown-menu">
-				<li><a href="#voucher" data-toggle="tab">voucher</a></li>
-				<li><a href="#gift-card" data-toggle="tab">Gift Card</a></li>
-			</ul>
-		</li>
-	</ul>
-
-	<div class="tab-content">
-		<div class="tab-pane active" id="customer">
-			<%= render 'test_case/customer'%>
-		</div>
-		<div class="tab-pane" id="payment">
-			<%= render 'test_case/payment'%>
-		</div>
-		<div class="tab-pane" id="billing">
-			<%= render 'test_case/billing'%>
-		</div>
-		<div class="tab-pane" id="shipping">
-			<%= render 'test_case/shipping'%>
-		</div>
-		<div class="tab-pane" id="carrier">
-			<%= render 'test_case/carrier'%>
-		</div>
-		<div class="tab-pane" id="item">
-			<%= render 'test_case/item'%>
-		</div>
-		<div class="tab-pane" id="voucher">
-			<%= render 'test_case/voucher'%>
-		</div>
-		<div class="tab-pane" id="gift-card">
-			<%= render 'test_case/gift_card'%>
+		<div class="tab-content">
+			<div class="tab-pane active" id="customer">
+				<%= render 'test_case/customer'%>
+			</div>
+			<div class="tab-pane" id="payment">
+				<%= render 'test_case/payment'%>
+			</div>
+			<div class="tab-pane" id="billing">
+				<%= render 'test_case/billing'%>
+			</div>
+			<div class="tab-pane" id="shipping">
+				<%= render 'test_case/shipping'%>
+			</div>
+			<div class="tab-pane" id="carrier">
+				<%= render 'test_case/carrier'%>
+			</div>
+			<div class="tab-pane" id="item">
+				<%= render 'test_case/item'%>
+			</div>
+			<div class="tab-pane" id="voucher">
+				<%= render 'test_case/voucher'%>
+			</div>
+			<div class="tab-pane" id="gift-card">
+				<%= render 'test_case/gift_card'%>
+			</div>
 		</div>
 	</div>
-</div>
+<% end %>

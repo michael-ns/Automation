@@ -13,8 +13,9 @@ class TestCaseController < ApplicationController
 	end
 
 	def create
-		@testCase = TestCase.new(case_params)
-		@testCase.customer_id = Customer.find_id(params[:customer])
+		@testCase = TestCase.new
+		@testCase.name = params[:name]
+		@testCase.customer_id = Customer.where(:type => params[:customer]).select('id').first.id
 		@testCase.payment_method = params[:payment]
 
 
