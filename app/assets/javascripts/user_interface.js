@@ -103,10 +103,23 @@ $(document).ready(function(){
 		var template = Handlebars.compile(source);
 		var data = {itemCount: counter};
 		$('#item-wrapper-' + counter).html(template(data));
-	}
+	};
+
+	removeItem = function () {
+		if ($('.item-wrapper').length != 1) {
+			$('.item-wrapper').last().remove();
+			$('.item-count').text($('.item-wrapper').length);
+		} else {
+			alert('You have to configure as least one item');
+		}
+	};
 
 	//test case details page add item
 	$('#btn-add-item').click(function () {
 		addNewItem();
+	});
+
+	$('#btn-remove-item').click(function () {
+		removeItem();
 	});
 });
